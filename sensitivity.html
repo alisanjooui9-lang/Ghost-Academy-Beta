@@ -8,177 +8,118 @@
 
 <title>آموزش سنسیویتی | Ghost Academy</title>
 
-
 <style>
 
 body{
-
 margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
-padding:30px;
+padding:25px;
 text-align:center;
-
 }
-
 
 .box{
-
+max-width:700px;
+margin:auto;
 background:#151515;
-padding:30px;
-border-radius:25px;
-border:1px solid #333;
-
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 20px #00ff99;
 }
 
-
-
-h1,h2{
-
+h1{
 color:#00ff99;
-
 }
 
-
+p{
+line-height:2;
+font-size:18px;
+}
 
 button{
-
 background:#00ff99;
-border:0;
+border:none;
 padding:12px 25px;
 border-radius:15px;
-font-weight:bold;
+font-size:16px;
 cursor:pointer;
-
-}
-
-
-
-.tip{
-
-background:#222;
-padding:15px;
-border-radius:15px;
-line-height:2;
-
+margin:10px;
 }
 
 </style>
 
 </head>
 
-
-
 <body>
-
 
 <div class="box">
 
-
-<h1>
-🎯 آموزش سنسیویتی
-</h1>
-
+<h1>🎯 آموزش سنسیویتی</h1>
 
 <p>
-تنظیمات حرفه‌ای کنترل کالاف دیوتی موبایل
-</p>
 
-
-
-<div class="tip">
-
-🔥 نکات سنسیویتی:
-
-<br>
-
-• سنسیویتی دوربین را با سبک بازی تنظیم کن
-
-<br>
-
-• برای اسنایپر کنترل دقیق‌تر مهم است
-
-<br>
-
-• هر روز تمرین کن تا بهتر شوی
-
-</div>
-
-
-
-<br>
-
-
-
-<button onclick="completeLesson()">
-
-✅ پایان آموزش +10 XP
-
-</button>
-
-
-
+برای شروع بهتر است سنسیویتی دوربین را بین <b>80 تا 120</b> قرار دهید.
 <br><br>
 
+سنسیویتی ADS را روی <b>90</b> تنظیم کنید.
+<br><br>
 
+ژیروسکوپ اگر استفاده می‌کنید بین <b>250 تا 350</b> مناسب است.
+<br><br>
+
+قبل از ورود به رنک، چند دست در بخش تمرین بازی کنید.
+
+</p>
+
+<button onclick="completeLesson()">
+✅ پایان آموزش
+</button>
+
+<br>
 
 <a href="index.html">
-
 <button>
 ⬅ برگشت
 </button>
-
 </a>
-
 
 </div>
 
-
-
-
 <script>
-
 
 function completeLesson(){
 
+if(localStorage.getItem("lesson_sensitivity")=="done"){
+
+alert("✅ جایزه این آموزش را قبلاً گرفته‌ای.");
+return;
+
+}
 
 let xp = Number(localStorage.getItem("xp")) || 0;
-
+let coins = Number(localStorage.getItem("coins")) || 100;
 let level = Number(localStorage.getItem("level")) || 1;
 
-
-
 xp += 10;
+coins += 20;
 
-
-
-if(xp >= 100){
-
-xp = 0;
-
+if(xp>=100){
+xp -= 100;
 level++;
-
-alert("🎉 تبریک! لول شما افزایش یافت");
-
 }
-
 
 localStorage.setItem("xp",xp);
-
+localStorage.setItem("coins",coins);
 localStorage.setItem("level",level);
 
+localStorage.setItem("lesson_sensitivity","done");
 
-
-alert("🔥 10 XP دریافت کردی!");
+alert("🎉 آموزش کامل شد!\n+20 سکه 🪙\n+10 XP 🔥");
 
 }
 
-
-
 </script>
-
-
 
 </body>
 
