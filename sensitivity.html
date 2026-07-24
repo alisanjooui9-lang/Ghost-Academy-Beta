@@ -1,37 +1,185 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<title>آموزش سنسیویتی</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>آموزش سنسیویتی | Ghost Academy</title>
+
+
 <style>
+
 body{
+
+margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
+padding:30px;
 text-align:center;
-padding:40px;
+
 }
-h1{color:#00ff99;}
+
+
+.box{
+
+background:#151515;
+padding:30px;
+border-radius:25px;
+border:1px solid #333;
+
+}
+
+
+
+h1,h2{
+
+color:#00ff99;
+
+}
+
+
+
 button{
+
 background:#00ff99;
-padding:12px 20px;
 border:0;
-border-radius:12px;
+padding:12px 25px;
+border-radius:15px;
+font-weight:bold;
+cursor:pointer;
+
 }
+
+
+
+.tip{
+
+background:#222;
+padding:15px;
+border-radius:15px;
+line-height:2;
+
+}
+
 </style>
+
 </head>
+
+
 
 <body>
 
-<h1>🎯 آموزش سنسیویتی</h1>
+
+<div class="box">
+
+
+<h1>
+🎯 آموزش سنسیویتی
+</h1>
+
 
 <p>
-اینجا آموزش تنظیمات حرفه‌ای سنسیویتی کالاف قرار می‌گیرد.
+تنظیمات حرفه‌ای کنترل کالاف دیوتی موبایل
 </p>
 
+
+
+<div class="tip">
+
+🔥 نکات سنسیویتی:
+
+<br>
+
+• سنسیویتی دوربین را با سبک بازی تنظیم کن
+
+<br>
+
+• برای اسنایپر کنترل دقیق‌تر مهم است
+
+<br>
+
+• هر روز تمرین کن تا بهتر شوی
+
+</div>
+
+
+
+<br>
+
+
+
+<button onclick="completeLesson()">
+
+✅ پایان آموزش +10 XP
+
+</button>
+
+
+
+<br><br>
+
+
+
 <a href="index.html">
-<button>⬅ برگشت</button>
+
+<button>
+⬅ برگشت
+</button>
+
 </a>
 
+
+</div>
+
+
+
+
+<script>
+
+
+function completeLesson(){
+
+
+let xp = Number(localStorage.getItem("xp")) || 0;
+
+let level = Number(localStorage.getItem("level")) || 1;
+
+
+
+xp += 10;
+
+
+
+if(xp >= 100){
+
+xp = 0;
+
+level++;
+
+alert("🎉 تبریک! لول شما افزایش یافت");
+
+}
+
+
+localStorage.setItem("xp",xp);
+
+localStorage.setItem("level",level);
+
+
+
+alert("🔥 10 XP دریافت کردی!");
+
+}
+
+
+
+</script>
+
+
+
 </body>
+
 </html>
