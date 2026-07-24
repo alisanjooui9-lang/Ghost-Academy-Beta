@@ -13,22 +13,27 @@
 
 body{
 
+margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
-text-align:center;
 padding:30px;
+text-align:center;
 
 }
 
 
 .box{
 
+max-width:600px;
+margin:auto;
 background:#151515;
-padding:25px;
+padding:30px;
 border-radius:25px;
+box-shadow:0 0 20px #00ff99;
 
 }
+
 
 
 h1{
@@ -38,25 +43,51 @@ color:#00ff99;
 }
 
 
+
 .player{
 
 background:#222;
 margin:15px;
-padding:15px;
-border-radius:15px;
+padding:20px;
+border-radius:20px;
 
 }
+
+
+
+.gold{
+
+border:2px solid gold;
+
+}
+
+
+.silver{
+
+border:2px solid silver;
+
+}
+
+
+.bronze{
+
+border:2px solid #cd7f32;
+
+}
+
 
 
 button{
 
 background:#00ff99;
-padding:12px 25px;
 border:0;
+padding:12px 25px;
 border-radius:15px;
 font-weight:bold;
+cursor:pointer;
 
 }
+
 
 </style>
 
@@ -66,19 +97,18 @@ font-weight:bold;
 <body>
 
 
+
 <div class="box">
 
 
 <h1>
-🏆 رتبه‌بندی بازیکنان
+🏆 Leaderboard
 </h1>
-
 
 
 <div id="list">
 
 </div>
-
 
 
 <br>
@@ -98,16 +128,22 @@ font-weight:bold;
 
 
 
+<script src="rank.js"></script>
+
+
+
 <script>
 
 
-let players = JSON.parse(localStorage.getItem("players")) || [];
+
+let players =
+JSON.parse(localStorage.getItem("players")) || [];
 
 
 
 players.sort((a,b)=>{
 
-return b.xp - a.xp;
+return b.level - a.level || b.xp - a.xp;
 
 });
 
@@ -119,13 +155,40 @@ let list=document.getElementById("list");
 
 if(players.length==0){
 
-list.innerHTML="هنوز بازیکنی ثبت نشده 😢";
+list.innerHTML="😢 هنوز بازیکنی ثبت نشده";
 
 }
 
 
 
+
 players.forEach((p,index)=>{
+
+
+
+let medal="";
+
+
+
+if(index==0){
+
+medal="🥇";
+
+}
+
+else if(index==1){
+
+medal="🥈";
+
+}
+
+else if(index==2){
+
+medal="🥉";
+
+}
+
+
 
 
 list.innerHTML += `
@@ -133,19 +196,35 @@ list.innerHTML += `
 
 <div class="player">
 
-${index+1}️⃣
 
-<br>
+${medal} رتبه ${index+1}
+
+
+<br><br>
+
 
 👤 ${p.name}
 
+
 <br>
+
+
+⭐ Level: ${p.level}
+
+
+<br>
+
 
 🔥 XP: ${p.xp}
 
+
 <br>
 
-⭐ Level: ${p.level}
+
+🎖 رنک:
+${getRank(p.level)}
+
+
 
 </div>
 
