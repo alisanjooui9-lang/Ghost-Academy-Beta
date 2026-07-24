@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فروشگاه | Ghost Academy</title>
+
+
+<style>
+
+body{
+
+margin:0;
+background:#050505;
+color:white;
+font-family:tahoma;
+padding:30px;
+text-align:center;
+
+}
+
+
+.box{
+
+max-width:600px;
+margin:auto;
+background:#151515;
+padding:25px;
+border-radius:25px;
+box-shadow:0 0 20px #00ff99;
+
+}
+
+
+h1,h2{
+
+color:#00ff99;
+
+}
+
+
+
+.item{
+
+background:#222;
+margin:15px;
+padding:20px;
+border-radius:20px;
+
+}
+
+
+
+button{
+
+background:#00ff99;
+border:0;
+padding:12px 25px;
+border-radius:15px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="box">
+
+
+<h1>
+🏪 فروشگاه Ghost
+</h1>
+
+
+
+<h2>
+🪙 سکه:
+<span id="coins">
+100
+</span>
+</h2>
+
+
+
+<div class="item">
+
+👻 اسکین Ghost
+
+<br>
+
+قیمت: 50 🪙
+
+<br><br>
+
+<button onclick="buy(50,'اسکین Ghost')">
+
+خرید
+
+</button>
+
+</div>
+
+
+
+
+
+<div class="item">
+
+🎯 نشانه حرفه‌ای
+
+<br>
+
+قیمت: 30 🪙
+
+<br><br>
+
+<button onclick="buy(30,'نشانه حرفه‌ای')">
+
+خرید
+
+</button>
+
+</div>
+
+
+
+
+
+<div class="item">
+
+🔥 کارت XP
+
+<br>
+
+قیمت: 20 🪙
+
+<br><br>
+
+<button onclick="buy(20,'کارت XP')">
+
+خرید
+
+</button>
+
+</div>
+
+
+
+
+<br>
+
+
+<a href="index.html">
+
+<button>
+⬅ برگشت
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+
+let coins =
+Number(localStorage.getItem("coins")) || 100;
+
+
+
+document.getElementById("coins").innerHTML=coins;
+
+
+
+function buy(price,item){
+
+
+if(coins >= price){
+
+
+coins -= price;
+
+
+localStorage.setItem(
+"coins",
+coins
+);
+
+
+
+let items =
+JSON.parse(localStorage.getItem("items")) || [];
+
+
+
+items.push(item);
+
+
+
+localStorage.setItem(
+"items",
+JSON.stringify(items)
+);
+
+
+
+document.getElementById("coins").innerHTML=coins;
+
+
+
+alert("✅ خرید شد: "+item);
+
+
+}
+
+else{
+
+
+alert("❌ سکه کافی نیست");
+
+
+}
+
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
