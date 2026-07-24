@@ -2,83 +2,179 @@
 <html lang="fa" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ghost Academy Beta</title>
 
+
 <style>
 
+*{
+box-sizing:border-box;
+}
+
+
 body{
+
 margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
-transition:.3s;
+transition:.4s;
+
+}
+
+
+/* حالت روز */
+
+body.light{
+
+background:#eeeeee;
+color:#111;
+
 }
 
 
 header{
+
 background:#111;
-padding:30px;
+padding:35px;
 text-align:center;
 border-bottom:3px solid #00ff99;
+box-shadow:0 0 20px #00ff99;
+
 }
+
+
+.light header{
+
+background:white;
+
+}
+
 
 
 .logo{
+
 font-size:40px;
 color:#00ff99;
 font-weight:bold;
+
 }
+
 
 
 nav{
+
 background:#151515;
 padding:15px;
 text-align:center;
+
 }
+
+
+.light nav{
+
+background:#ddd;
+
+}
+
 
 
 nav a{
+
 color:white;
 text-decoration:none;
-margin:10px;
+margin:12px;
+
 }
 
 
-.card{
-background:#151515;
-margin:20px;
-padding:20px;
-border-radius:20px;
-border:1px solid #333;
+.light nav a{
+
+color:#111;
+
 }
 
-
-h2{
-color:#00ff99;
-}
 
 
 button{
+
 background:#00ff99;
 border:0;
-padding:12px 20px;
-border-radius:12px;
+padding:12px 22px;
+border-radius:15px;
 font-weight:bold;
+cursor:pointer;
+
 }
+
+
+
+#themeBtn{
+
+position:fixed;
+bottom:20px;
+left:20px;
+
+}
+
+
+
+.card{
+
+background:#151515;
+margin:20px;
+padding:25px;
+border-radius:20px;
+border:1px solid #333;
+transition:.3s;
+
+}
+
+
+
+.light .card{
+
+background:white;
+
+}
+
+
+
+.card:hover{
+
+transform:scale(1.03);
+box-shadow:0 0 20px #00ff99;
+
+}
+
+
+
+h2{
+
+color:#00ff99;
+
+}
+
 
 
 footer{
+
 text-align:center;
-padding:20px;
+padding:25px;
 color:#777;
+
 }
+
 
 </style>
 
+
 </head>
+
 
 
 <body>
@@ -90,70 +186,116 @@ color:#777;
 👻 GHOST ACADEMY BETA
 </div>
 
+
 <p>
 نسخه آزمایشی آکادمی کالاف دیوتی موبایل 🎮
 </p>
 
+
 </header>
+
 
 
 <nav>
 
-<a href="#">خانه</a>
+<a href="index.html">
+خانه
+</a>
 
-<a href="news.html">اخبار 📰</a>
 
-<a href="profile.html">پروفایل 👤</a>
+<a href="news.html">
+اخبار 📰
+</a>
+
 
 </nav>
 
 
 
+
+<button id="themeBtn" onclick="changeTheme()">
+
+🌙 / ☀️
+
+</button>
+
+
+
+
+
 <div class="card">
 
-<h2>🎯 آموزش سنسیویتی</h2>
+<h2>
+🎯 آموزش سنسیویتی
+</h2>
 
 <p>
 تنظیمات حرفه‌ای کنترل بازی
 </p>
 
+
+<a href="sensitivity.html">
+
 <button>
 مشاهده آموزش
 </button>
+
+</a>
 
 </div>
 
 
 
+
+
 <div class="card">
 
-<h2>🔫 آموزش اسنایپر</h2>
+<h2>
+🔫 آموزش اسنایپر
+</h2>
 
 <p>
-تکنیک‌های تیراندازی دقیق
+تکنیک تیراندازی دقیق
 </p>
+
+
+<a href="sniper.html">
 
 <button>
 مشاهده آموزش
 </button>
 
+</a>
+
 </div>
+
+
+
 
 
 
 <div class="card">
 
-<h2>🏆 آموزش بتل رویال</h2>
+<h2>
+🏆 آموزش بتل رویال
+</h2>
 
 <p>
 تاکتیک‌های زنده ماندن
 </p>
 
+
+<a href="battle.html">
+
 <button>
 مشاهده آموزش
 </button>
 
+</a>
+
 </div>
+
+
 
 
 
@@ -162,6 +304,45 @@ color:#777;
 Ghost Academy Beta © 2026
 
 </footer>
+
+
+
+
+
+<script>
+
+
+function changeTheme(){
+
+document.body.classList.toggle("light");
+
+
+if(document.body.classList.contains("light")){
+
+localStorage.setItem("theme","light");
+
+}
+
+else{
+
+localStorage.setItem("theme","dark");
+
+}
+
+}
+
+
+
+
+if(localStorage.getItem("theme")=="light"){
+
+document.body.classList.add("light");
+
+}
+
+
+</script>
+
 
 
 </body>
