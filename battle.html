@@ -8,35 +8,51 @@
 
 <title>آموزش بتل رویال | Ghost Academy</title>
 
+
 <style>
 
 body{
 
+margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
+padding:30px;
 text-align:center;
-padding:40px;
 
 }
 
-
-h1{
-
-color:#00ff99;
-font-size:35px;
-
-}
 
 
 .box{
 
 background:#151515;
-padding:25px;
-border-radius:20px;
+padding:30px;
+border-radius:25px;
 border:1px solid #333;
+box-shadow:0 0 20px #00ff99;
 
 }
+
+
+
+h1,h2{
+
+color:#00ff99;
+
+}
+
+
+
+.tip{
+
+background:#222;
+padding:20px;
+border-radius:15px;
+line-height:2;
+
+}
+
 
 
 button{
@@ -44,8 +60,9 @@ button{
 background:#00ff99;
 border:0;
 padding:12px 25px;
-border-radius:12px;
+border-radius:15px;
 font-weight:bold;
+cursor:pointer;
 
 }
 
@@ -54,51 +71,125 @@ font-weight:bold;
 </head>
 
 
+
 <body>
+
 
 
 <div class="box">
 
 
-<h1>🏆 آموزش بتل رویال</h1>
+<h1>
+🏆 آموزش بتل رویال
+</h1>
 
 
 <p>
-در این بخش تاکتیک‌های زنده ماندن،
-حرکت حرفه‌ای و پیروزی در بتل رویال را یاد می‌گیرید.
+تاکتیک‌های زنده ماندن و پیروزی در بتل رویال
 </p>
 
 
 
-<h2>🔥 نکات حرفه‌ای</h2>
+<div class="tip">
 
+🔥 نکات حرفه‌ای:
 
-<p>
+<br>
 
-• انتخاب محل فرود مناسب<br>
+• انتخاب محل فرود مناسب
 
-• جمع کردن تجهیزات سریع<br>
+<br>
 
-• مدیریت تیر و مهمات<br>
+• جمع کردن تجهیزات سریع
 
-• بازی هوشمندانه در دقایق آخر
+<br>
 
-</p>
+• مدیریت مهمات و سلامتی
+
+<br>
+
+• حرکت هوشمندانه در منطقه امن
+
+<br>
+
+• تصمیم‌گیری در مبارزات آخر
+
+</div>
+
 
 
 <br>
 
 
+
+<button onclick="completeLesson()">
+
+✅ پایان آموزش +10 XP
+
+</button>
+
+
+
+<br><br>
+
+
+
 <a href="index.html">
 
 <button>
-⬅ برگشت به خانه
+⬅ برگشت
 </button>
 
 </a>
 
 
 </div>
+
+
+
+
+<script>
+
+
+function completeLesson(){
+
+
+let xp = Number(localStorage.getItem("xp")) || 0;
+
+let level = Number(localStorage.getItem("level")) || 1;
+
+
+
+xp += 10;
+
+
+
+if(xp >=100){
+
+xp = 0;
+
+level++;
+
+alert("👑 تبریک! لول جدید گرفتی!");
+
+}
+
+
+
+localStorage.setItem("xp",xp);
+
+localStorage.setItem("level",level);
+
+
+
+alert("🔥 10 XP دریافت کردی!");
+
+}
+
+
+
+</script>
+
 
 
 </body>
