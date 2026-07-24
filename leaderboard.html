@@ -13,59 +13,50 @@
 
 body{
 
-margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
-padding:30px;
 text-align:center;
+padding:30px;
 
 }
 
 
 .box{
 
-max-width:500px;
-margin:auto;
 background:#151515;
-padding:30px;
+padding:25px;
 border-radius:25px;
-border:1px solid #333;
-box-shadow:0 0 20px #00ff99;
 
 }
 
 
-h1,h2{
+h1{
 
 color:#00ff99;
 
 }
 
 
-
 .player{
 
 background:#222;
-padding:20px;
 margin:15px;
-border-radius:20px;
+padding:15px;
+border-radius:15px;
 
 }
-
 
 
 button{
 
 background:#00ff99;
-border:0;
 padding:12px 25px;
+border:0;
 border-radius:15px;
 font-weight:bold;
-cursor:pointer;
 
 }
-
 
 </style>
 
@@ -79,74 +70,18 @@ cursor:pointer;
 
 
 <h1>
-🏆 Leaderboard
+🏆 رتبه‌بندی بازیکنان
 </h1>
 
 
-<h2>
-رتبه‌بندی بازیکن
-</h2>
 
-
-
-<div class="player">
-
-👤 نام بازیکن:
-
-<br>
-
-<b id="name">
-بازیکن ناشناس
-</b>
-
-</div>
-
-
-
-<div class="player">
-
-⭐ Level:
-
-<br>
-
-<b id="level">
-1
-</b>
-
-</div>
-
-
-
-<div class="player">
-
-🔥 XP:
-
-<br>
-
-<b id="xp">
-0
-</b>
-
-</div>
-
-
-
-<div class="player">
-
-🏅 رتبه:
-
-<br>
-
-<b id="rank">
-بازیکن تازه‌کار
-</b>
+<div id="list">
 
 </div>
 
 
 
 <br>
-
 
 
 <a href="index.html">
@@ -158,7 +93,6 @@ cursor:pointer;
 </a>
 
 
-
 </div>
 
 
@@ -167,45 +101,65 @@ cursor:pointer;
 <script>
 
 
-let name = localStorage.getItem("username") || "بازیکن ناشناس";
-
-let xp = Number(localStorage.getItem("xp")) || 0;
-
-let level = Number(localStorage.getItem("level")) || 1;
+let players = JSON.parse(localStorage.getItem("players")) || [];
 
 
 
-document.getElementById("name").innerHTML=name;
+players.sort((a,b)=>{
 
-document.getElementById("xp").innerHTML=xp;
+return b.xp - a.xp;
 
-document.getElementById("level").innerHTML=level;
-
-
-
-let rank="بازیکن تازه‌کار";
+});
 
 
-if(level>=5){
 
-rank="🔥 بازیکن حرفه‌ای";
-
-}
+let list=document.getElementById("list");
 
 
-if(level>=10){
 
-rank="👑 استاد Ghost";
+if(players.length==0){
+
+list.innerHTML="هنوز بازیکنی ثبت نشده 😢";
 
 }
 
 
 
-document.getElementById("rank").innerHTML=rank;
+players.forEach((p,index)=>{
+
+
+list.innerHTML += `
+
+
+<div class="player">
+
+${index+1}️⃣
+
+<br>
+
+👤 ${p.name}
+
+<br>
+
+🔥 XP: ${p.xp}
+
+<br>
+
+⭐ Level: ${p.level}
+
+</div>
+
+
+`;
+
+
+
+});
 
 
 
 </script>
+
 
 
 </body>
