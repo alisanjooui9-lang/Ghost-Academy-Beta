@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>مدال‌ها | Ghost Academy</title>
+
+
+<style>
+
+body{
+
+margin:0;
+background:#050505;
+color:white;
+font-family:tahoma;
+padding:30px;
+text-align:center;
+
+}
+
+
+
+.box{
+
+background:#151515;
+padding:30px;
+border-radius:25px;
+border:1px solid #333;
+box-shadow:0 0 20px #00ff99;
+
+}
+
+
+
+h1,h2{
+
+color:#00ff99;
+
+}
+
+
+
+.medal{
+
+background:#222;
+padding:20px;
+margin:15px;
+border-radius:20px;
+
+}
+
+
+
+.lock{
+
+opacity:.4;
+
+}
+
+
+
+button{
+
+background:#00ff99;
+border:0;
+padding:12px 25px;
+border-radius:15px;
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="box">
+
+
+<h1>
+🏅 مدال‌های بازیکن
+</h1>
+
+
+
+<div class="medal" id="first">
+
+🎮 اولین آموزش
+<br>
+قفل
+
+</div>
+
+
+
+<div class="medal" id="pro">
+
+🔥 بازیکن حرفه‌ای
+<br>
+قفل
+
+</div>
+
+
+
+<div class="medal" id="ghost">
+
+👑 استاد Ghost
+<br>
+قفل
+
+</div>
+
+
+
+<br>
+
+
+<a href="index.html">
+
+<button>
+⬅ برگشت
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+
+let xp = Number(localStorage.getItem("xp")) || 0;
+
+let level = Number(localStorage.getItem("level")) || 1;
+
+
+
+if(xp > 0 || level > 1){
+
+document.getElementById("first").innerHTML=
+"🎮 اولین آموزش ✅<br>باز شده";
+
+}
+
+
+
+if(level >=5){
+
+document.getElementById("pro").innerHTML=
+"🔥 بازیکن حرفه‌ای ✅<br>باز شده";
+
+}
+
+
+
+if(level >=10){
+
+document.getElementById("ghost").innerHTML=
+"👑 استاد Ghost ✅<br>باز شده";
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
