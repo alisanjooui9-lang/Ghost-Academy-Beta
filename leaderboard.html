@@ -8,6 +8,7 @@
 
 <title>Leaderboard | Ghost Academy</title>
 
+
 <style>
 
 body{
@@ -24,6 +25,8 @@ text-align:center;
 
 .box{
 
+max-width:500px;
+margin:auto;
 background:#151515;
 padding:30px;
 border-radius:25px;
@@ -33,7 +36,7 @@ box-shadow:0 0 20px #00ff99;
 }
 
 
-h1{
+h1,h2{
 
 color:#00ff99;
 
@@ -44,32 +47,9 @@ color:#00ff99;
 .player{
 
 background:#222;
+padding:20px;
 margin:15px;
-padding:15px;
-border-radius:15px;
-font-size:18px;
-
-}
-
-
-
-.gold{
-
-border:2px solid gold;
-
-}
-
-
-.silver{
-
-border:2px solid silver;
-
-}
-
-
-.bronze{
-
-border:2px solid #cd7f32;
+border-radius:20px;
 
 }
 
@@ -82,8 +62,10 @@ border:0;
 padding:12px 25px;
 border-radius:15px;
 font-weight:bold;
+cursor:pointer;
 
 }
+
 
 </style>
 
@@ -97,60 +79,74 @@ font-weight:bold;
 
 
 <h1>
-🏆 جدول رتبه‌بندی بازیکنان
+🏆 Leaderboard
 </h1>
 
 
-<div class="player gold">
-
-🥇 Ghost Player
-
-<br>
-
-Level 15 | XP 90
-
-</div>
-
-
-
-<div class="player silver">
-
-🥈 Shadow
-
-<br>
-
-Level 10 | XP 60
-
-</div>
-
-
-
-<div class="player bronze">
-
-🥉 Sniper King
-
-<br>
-
-Level 7 | XP 40
-
-</div>
-
+<h2>
+رتبه‌بندی بازیکن
+</h2>
 
 
 
 <div class="player">
 
-🎮 بازیکن جدید
+👤 نام بازیکن:
 
 <br>
 
-Level 1 | XP 0
+<b id="name">
+بازیکن ناشناس
+</b>
+
+</div>
+
+
+
+<div class="player">
+
+⭐ Level:
+
+<br>
+
+<b id="level">
+1
+</b>
+
+</div>
+
+
+
+<div class="player">
+
+🔥 XP:
+
+<br>
+
+<b id="xp">
+0
+</b>
+
+</div>
+
+
+
+<div class="player">
+
+🏅 رتبه:
+
+<br>
+
+<b id="rank">
+بازیکن تازه‌کار
+</b>
 
 </div>
 
 
 
 <br>
+
 
 
 <a href="index.html">
@@ -162,7 +158,54 @@ Level 1 | XP 0
 </a>
 
 
+
 </div>
+
+
+
+
+<script>
+
+
+let name = localStorage.getItem("username") || "بازیکن ناشناس";
+
+let xp = Number(localStorage.getItem("xp")) || 0;
+
+let level = Number(localStorage.getItem("level")) || 1;
+
+
+
+document.getElementById("name").innerHTML=name;
+
+document.getElementById("xp").innerHTML=xp;
+
+document.getElementById("level").innerHTML=level;
+
+
+
+let rank="بازیکن تازه‌کار";
+
+
+if(level>=5){
+
+rank="🔥 بازیکن حرفه‌ای";
+
+}
+
+
+if(level>=10){
+
+rank="👑 استاد Ghost";
+
+}
+
+
+
+document.getElementById("rank").innerHTML=rank;
+
+
+
+</script>
 
 
 </body>
