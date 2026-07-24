@@ -10,29 +10,23 @@
 
 <style>
 
-*{
-box-sizing:border-box;
-}
-
-
 body{
 
 margin:0;
 background:#050505;
 color:white;
 font-family:tahoma;
-transition:.4s;
+transition:.3s;
 
 }
 
 
-body.light{
+.light{
 
 background:#eee;
 color:#111;
 
 }
-
 
 
 header{
@@ -46,17 +40,9 @@ box-shadow:0 0 20px #00ff99;
 }
 
 
-.light header{
-
-background:white;
-
-}
-
-
-
 .logo{
 
-font-size:42px;
+font-size:45px;
 color:#00ff99;
 font-weight:bold;
 
@@ -73,20 +59,20 @@ text-align:center;
 }
 
 
-.light nav{
-
-background:#ddd;
-
-}
-
-
-
 nav a{
 
 color:white;
 text-decoration:none;
 margin:8px;
 font-weight:bold;
+
+}
+
+
+
+.light nav{
+
+background:white;
 
 }
 
@@ -103,7 +89,7 @@ button{
 
 background:#00ff99;
 border:0;
-padding:12px 22px;
+padding:12px 25px;
 border-radius:15px;
 font-weight:bold;
 cursor:pointer;
@@ -129,7 +115,6 @@ margin:20px;
 padding:25px;
 border-radius:20px;
 border:1px solid #333;
-transition:.3s;
 
 }
 
@@ -138,15 +123,6 @@ transition:.3s;
 .light .card{
 
 background:white;
-
-}
-
-
-
-.card:hover{
-
-transform:scale(1.03);
-box-shadow:0 0 20px #00ff99;
 
 }
 
@@ -163,15 +139,15 @@ color:#00ff99;
 footer{
 
 text-align:center;
-padding:25px;
+padding:20px;
 color:#777;
 
 }
 
-
 </style>
 
 </head>
+
 
 
 <body>
@@ -181,12 +157,16 @@ color:#777;
 <header>
 
 <div class="logo">
+
 👻 GHOST ACADEMY
+
 </div>
 
 
 <p>
+
 آکادمی حرفه‌ای کالاف دیوتی موبایل 🎮
+
 </p>
 
 
@@ -195,7 +175,9 @@ color:#777;
 
 
 
+
 <nav>
+
 
 <a href="index.html">
 🏠 خانه
@@ -221,16 +203,23 @@ color:#777;
 🏆 رتبه‌بندی
 </a>
 
+
+<a href="shop.html">
+🏪 فروشگاه
+</a>
+
+
+
 </nav>
 
 
 
 
+<button id="theme" onclick="theme()">
 
-<button id="theme" onclick="changeTheme()">
 🌙 / ☀️
-</button>
 
+</button>
 
 
 
@@ -243,17 +232,18 @@ color:#777;
 </h2>
 
 <p>
-تنظیم کنترل و نشانه‌گیری حرفه‌ای
+تنظیمات حرفه‌ای کنترل و نشانه‌گیری
 </p>
 
 <a href="sensitivity.html">
+
 <button>
-مشاهده آموزش
+شروع آموزش
 </button>
+
 </a>
 
 </div>
-
 
 
 
@@ -266,19 +256,18 @@ color:#777;
 </h2>
 
 <p>
-تیراندازی دقیق و حرفه‌ای
+تکنیک تیراندازی دقیق
 </p>
 
-
 <a href="sniper.html">
+
 <button>
-مشاهده آموزش
+شروع آموزش
 </button>
+
 </a>
 
 </div>
-
-
 
 
 
@@ -290,21 +279,19 @@ color:#777;
 🏆 آموزش بتل رویال
 </h2>
 
-
 <p>
-تاکتیک‌های زنده ماندن
+تاکتیک‌های پیروزی
 </p>
 
-
 <a href="battle.html">
+
 <button>
-مشاهده آموزش
+شروع آموزش
 </button>
+
 </a>
 
-
 </div>
-
 
 
 
@@ -313,24 +300,22 @@ color:#777;
 <div class="card">
 
 <h2>
-📰 اخبار کالاف
+🏪 فروشگاه Ghost
 </h2>
 
-
 <p>
-آخرین خبرهای بازی
+خرید آیتم با سکه 🪙
 </p>
 
+<a href="shop.html">
 
-<a href="news.html">
 <button>
-مشاهده اخبار
+ورود به فروشگاه
 </button>
+
 </a>
 
-
 </div>
-
 
 
 
@@ -345,10 +330,11 @@ Ghost Academy © 2026
 
 
 
+
 <script>
 
 
-function changeTheme(){
+function theme(){
 
 document.body.classList.toggle("light");
 
@@ -376,7 +362,6 @@ document.body.classList.add("light");
 
 
 </script>
-
 
 
 </body>
