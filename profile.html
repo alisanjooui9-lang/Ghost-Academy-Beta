@@ -8,11 +8,9 @@
 
 <title>پروفایل | Ghost Academy</title>
 
-
 <style>
 
 body{
-
 margin:0;
 background:#050505;
 color:white;
@@ -20,15 +18,12 @@ font-family:tahoma;
 padding:30px;
 text-align:center;
 transition:.3s;
-
 }
 
 
 body.light{
-
 background:#eee;
 color:#111;
-
 }
 
 
@@ -45,16 +40,12 @@ box-shadow:0 0 20px #00ff99;
 
 
 .light .box{
-
 background:white;
-
 }
 
 
 h1,h2{
-
 color:#00ff99;
-
 }
 
 
@@ -82,8 +73,8 @@ cursor:pointer;
 
 .xpbar{
 
-background:#333;
 height:20px;
+background:#333;
 border-radius:20px;
 overflow:hidden;
 
@@ -98,11 +89,17 @@ background:#00ff99;
 }
 
 
+.rank{
+
+font-size:22px;
+margin:15px;
+
+}
+
+
 </style>
 
-
 </head>
-
 
 
 <body>
@@ -115,7 +112,6 @@ background:#00ff99;
 
 
 
-
 <div class="box">
 
 
@@ -124,11 +120,9 @@ background:#00ff99;
 </h1>
 
 
-
 <h2 id="name">
 بازیکن ناشناس
 </h2>
-
 
 
 <input id="username" placeholder="نام بازیکن">
@@ -149,18 +143,13 @@ background:#00ff99;
 
 <p>
 ⭐ Level:
-<span id="level">
-1
-</span>
+<span id="level">1</span>
 </p>
-
 
 
 <p>
 🔥 XP:
-<span id="xp">
-0
-</span>
+<span id="xp">0</span>
 /100
 </p>
 
@@ -174,7 +163,13 @@ background:#00ff99;
 
 
 
-<br>
+<h2 class="rank" id="rank">
+
+🥉 Rookie
+
+</h2>
+
+
 
 
 <button onclick="addXP()">
@@ -185,19 +180,7 @@ background:#00ff99;
 
 
 
-<p>
-
-🏆 رتبه:
-
-<span id="rank">
-بازیکن تازه‌کار
-</span>
-
-</p>
-
-
-
-<br>
+<br><br>
 
 
 
@@ -208,7 +191,6 @@ background:#00ff99;
 </button>
 
 </a>
-
 
 
 <br><br>
@@ -230,6 +212,9 @@ background:#00ff99;
 
 
 
+<script src="rank.js"></script>
+
+
 
 <script>
 
@@ -246,18 +231,16 @@ let oldName = localStorage.getItem("username");
 
 if(oldName){
 
-document.getElementById("name").innerHTML=oldName;
+document.getElementById("name").innerHTML = oldName;
 
 }
-
-
 
 
 
 function saveName(){
 
 
-let name=document.getElementById("username").value;
+let name = document.getElementById("username").value;
 
 
 if(name){
@@ -266,13 +249,12 @@ localStorage.setItem("username",name);
 
 document.getElementById("name").innerHTML=name;
 
-
 savePlayer();
 
 }
 
-
 }
+
 
 
 
@@ -290,6 +272,8 @@ xp=0;
 
 level++;
 
+alert("🎉 رنک بالاتر رفت!");
+
 }
 
 
@@ -305,7 +289,8 @@ savePlayer();
 update();
 
 
-alert("🔥 10 XP دریافت شد");
+
+alert("🔥 10 XP گرفتی!");
 
 }
 
@@ -337,7 +322,7 @@ level:level
 
 
 
-let found=false;
+let exists=false;
 
 
 
@@ -346,7 +331,7 @@ players = players.map(p=>{
 
 if(p.name==name){
 
-found=true;
+exists=true;
 
 return player;
 
@@ -360,7 +345,7 @@ return p;
 
 
 
-if(!found){
+if(!exists){
 
 players.push(player);
 
@@ -379,7 +364,6 @@ JSON.stringify(players)
 
 
 
-
 function update(){
 
 
@@ -392,30 +376,11 @@ document.getElementById("xpBar").style.width=xp+"%";
 
 
 
-let rank="بازیکن تازه‌کار";
-
-
-if(level>=5){
-
-rank="🔥 بازیکن حرفه‌ای";
-
-}
-
-
-
-if(level>=10){
-
-rank="👑 استاد Ghost";
-
-}
-
-
-
-document.getElementById("rank").innerHTML=rank;
+document.getElementById("rank").innerHTML =
+getRank(level);
 
 
 }
-
 
 
 
@@ -431,7 +396,9 @@ document.body.classList.toggle("light");
 update();
 
 
+
 </script>
+
 
 
 </body>
