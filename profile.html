@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>پروفایل بازیکن | Ghost Academy</title>
+
+<style>
+
+body{
+margin:0;
+background:#050505;
+color:white;
+font-family:tahoma;
+padding:30px;
+transition:.3s;
+}
+
+
+.light{
+background:#eee;
+color:#111;
+}
+
+
+.box{
+
+background:#151515;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid #333;
+
+}
+
+
+.light .box{
+background:white;
+}
+
+
+h1,h2{
+color:#00ff99;
+}
+
+
+input{
+
+padding:12px;
+border-radius:10px;
+border:0;
+}
+
+
+button{
+
+background:#00ff99;
+border:0;
+padding:12px 25px;
+border-radius:12px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+
+.xp{
+
+font-size:22px;
+color:#00ff99;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<button onclick="theme()">
+🌙 / ☀️
+</button>
+
+
+<div class="box">
+
+
+<h1>👤 پروفایل بازیکن</h1>
+
+
+<h2 id="name">
+بازیکن ناشناس
+</h2>
+
+
+<input id="username" placeholder="نام بازیکن">
+
+
+<br><br>
+
+
+<button onclick="saveName()">
+ذخیره نام
+</button>
+
+
+<hr>
+
+
+<p>🏆 سطح:</p>
+
+<h2 id="level">
+1
+</h2>
+
+
+<p>🔥 XP:</p>
+
+<div class="xp" id="xp">
+0 / 100
+</div>
+
+
+<br>
+
+
+<button onclick="addXP()">
++10 XP
+</button>
+
+
+<p>
+🎮 رتبه: بازیکن تازه‌کار
+</p>
+
+
+<br>
+
+
+<a href="index.html">
+
+<button>
+⬅ برگشت
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+let xp = localStorage.getItem("xp") || 0;
+
+
+let level = localStorage.getItem("level") || 1;
+
+
+
+function update(){
+
+document.getElementById("xp").innerHTML =
+xp + " / 100";
+
+
+document.getElementById("level").innerHTML =
+level;
+
+
+}
+
+
+
+function addXP(){
+
+xp = Number(xp) + 10;
+
+
+if(xp >= 100){
+
+xp = 0;
+
+level = Number(level) + 1;
+
+}
+
+
+localStorage.setItem("xp",xp);
+
+localStorage.setItem("level",level);
+
+
+update();
+
+}
+
+
+
+function saveName(){
+
+let n=document.getElementById("username").value;
+
+
+document.getElementById("name").innerHTML=n;
+
+
+localStorage.setItem("username",n);
+
+}
+
+
+
+let oldName=localStorage.getItem("username");
+
+
+if(oldName){
+
+document.getElementById("name").innerHTML=oldName;
+
+}
+
+
+
+function theme(){
+
+document.body.classList.toggle("light");
+
+}
+
+
+
+update();
+
+
+</script>
+
+
+</body>
+
+</html>
