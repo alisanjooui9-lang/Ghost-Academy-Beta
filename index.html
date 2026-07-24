@@ -6,13 +6,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ghost Academy Beta</title>
+<title>Ghost Academy</title>
+
 
 <style>
 
 *{
 box-sizing:border-box;
 }
+
 
 body{
 
@@ -45,6 +47,7 @@ box-shadow:0 0 20px #00ff99;
 }
 
 
+
 .light header{
 
 background:white;
@@ -52,9 +55,10 @@ background:white;
 }
 
 
+
 .logo{
 
-font-size:40px;
+font-size:42px;
 color:#00ff99;
 font-weight:bold;
 
@@ -71,6 +75,7 @@ text-align:center;
 }
 
 
+
 .light nav{
 
 background:#ddd;
@@ -84,8 +89,10 @@ nav a{
 color:white;
 text-decoration:none;
 margin:10px;
+font-weight:bold;
 
 }
+
 
 
 .light nav a{
@@ -100,8 +107,8 @@ button{
 
 background:#00ff99;
 border:0;
-padding:12px 20px;
-border-radius:12px;
+padding:12px 22px;
+border-radius:15px;
 font-weight:bold;
 cursor:pointer;
 
@@ -165,7 +172,9 @@ color:#777;
 
 }
 
+
 </style>
+
 
 </head>
 
@@ -179,23 +188,28 @@ color:#777;
 
 <div class="logo">
 
-👻 GHOST ACADEMY BETA
+👻 GHOST ACADEMY
 
 </div>
 
+
 <p>
-آموزش حرفه‌ای کالاف دیوتی موبایل 🎮
+آکادمی حرفه‌ای کالاف دیوتی موبایل 🎮
 </p>
+
 
 </header>
 
 
 
+
 <nav>
+
 
 <a href="index.html">
 🏠 خانه
 </a>
+
 
 
 <a href="news.html">
@@ -203,9 +217,17 @@ color:#777;
 </a>
 
 
+
 <a href="profile.html">
 👤 پروفایل
 </a>
+
+
+
+<a href="achievements.html">
+🏅 مدال‌ها
+</a>
+
 
 
 </nav>
@@ -218,6 +240,7 @@ color:#777;
 🌙 / ☀️
 
 </button>
+
 
 
 
@@ -242,7 +265,9 @@ color:#777;
 
 </a>
 
+
 </div>
+
 
 
 
@@ -268,7 +293,10 @@ color:#777;
 
 </a>
 
+
 </div>
+
+
 
 
 
@@ -294,14 +322,44 @@ color:#777;
 
 </a>
 
+
 </div>
+
+
+
+
+
+
+<div class="card">
+
+<h2>
+📰 اخبار کالاف
+</h2>
+
+
+<p>
+آخرین خبرهای بازی
+</p>
+
+
+<a href="news.html">
+
+<button>
+مشاهده اخبار
+</button>
+
+</a>
+
+
+</div>
+
 
 
 
 
 <footer>
 
-Ghost Academy Beta © 2026
+Ghost Academy © 2026
 
 </footer>
 
@@ -326,6 +384,7 @@ document.body.classList.contains("light")
 "dark"
 );
 
+
 }
 
 
@@ -335,7 +394,6 @@ if(localStorage.getItem("theme")=="light"){
 document.body.classList.add("light");
 
 }
-
 
 
 </script>
