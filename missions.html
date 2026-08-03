@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ماموریت های روزانه</title>
+
+<style>
+body{
+font-family:tahoma;
+background:#111;
+color:white;
+padding:20px;
+}
+
+.card{
+background:#1e1e1e;
+padding:15px;
+margin-bottom:15px;
+border-radius:12px;
+}
+
+button{
+background:#00c853;
+color:white;
+border:none;
+padding:10px;
+border-radius:8px;
+width:100%;
+margin-top:10px;
+font-size:16px;
+}
+
+.coins{
+background:#222;
+padding:15px;
+border-radius:12px;
+margin-bottom:20px;
+font-size:20px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="coins">
+💰 سکه های شما:
+<span id="coins">0</span>
+</div>
+
+<div class="card">
+<h2>🎯 ماموریت شماره 1</h2>
+<p>مشاهده 1 آموزش</p>
+<button onclick="mission1()">دریافت +20 سکه</button>
+</div>
+
+<div class="card">
+<h2>🎯 ماموریت شماره 2</h2>
+<p>مشاهده 3 آموزش</p>
+<button onclick="mission2()">دریافت +50 سکه</button>
+</div>
+
+<div class="card">
+<h2>🎯 ماموریت شماره 3</h2>
+<p>ورود روزانه</p>
+<button onclick="mission3()">دریافت +10 سکه</button>
+</div>
+
+<script>
+
+let coins = Number(localStorage.getItem("coins")) || 0;
+
+function updateCoins(){
+document.getElementById("coins").innerText = coins;
+}
+
+function mission1(){
+
+if(localStorage.getItem("mission1")!="done"){
+
+coins += 20;
+
+localStorage.setItem("coins",coins);
+
+localStorage.setItem("mission1","done");
+
+alert("🎉 +20 سکه دریافت شد");
+
+updateCoins();
+
+}else{
+
+alert("این ماموریت قبلا انجام شده");
+
+}
+
+}
+
+function mission2(){
+
+if(localStorage.getItem("mission2")!="done"){
+
+coins += 50;
+
+localStorage.setItem("coins",coins);
+
+localStorage.setItem("mission2","done");
+
+alert("🎉 +50 سکه دریافت شد");
+
+updateCoins();
+
+}else{
+
+alert("این ماموریت قبلا انجام شده");
+
+}
+
+}
+
+function mission3(){
+
+if(localStorage.getItem("mission3")!="done"){
+
+coins += 10;
+
+localStorage.setItem("coins",coins);
+
+localStorage.setItem("mission3","done");
+
+alert("🎉 +10 سکه دریافت شد");
+
+updateCoins();
+
+}else{
+
+alert("این ماموریت قبلا انجام شده");
+
+}
+
+}
+
+updateCoins();
+
+</script>
+
+</body>
+</html>
