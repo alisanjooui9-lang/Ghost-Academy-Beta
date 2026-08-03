@@ -8,28 +8,24 @@
 
 <title>GHOST ACADEMY</title>
 
-
 <style>
 
 body{
-
 background:#050505;
 color:white;
 font-family:tahoma;
 margin:0;
 padding:20px;
-
 }
 
 
 .header{
 
-background:linear-gradient(145deg,#111,#222);
+background:linear-gradient(135deg,#111,#252525);
 padding:25px;
 border-radius:20px;
 text-align:center;
 border:1px solid #444;
-box-shadow:0 0 25px black;
 
 }
 
@@ -43,29 +39,29 @@ letter-spacing:3px;
 }
 
 
-.subtitle{
+.text{
 
 color:#aaa;
-font-size:15px;
+margin-top:10px;
 
 }
 
 
 
-.stats{
+.profile{
 
-display:flex;
-justify-content:space-around;
 background:#111;
 margin-top:20px;
 padding:15px;
 border-radius:18px;
+display:flex;
+justify-content:space-around;
 border:1px solid #333;
 
 }
 
 
-.stat{
+.box{
 
 text-align:center;
 
@@ -80,42 +76,34 @@ margin-top:25px;
 }
 
 
-
 .menu a{
 
 display:block;
 background:#151515;
 color:white;
 text-decoration:none;
-
-padding:18px;
+padding:17px;
 margin:12px 0;
-
-border-radius:16px;
-
+border-radius:15px;
 font-size:18px;
-
 border:1px solid #333;
-
 transition:.3s;
 
 }
 
 
-
 .menu a:hover{
 
-background:#292929;
-transform:scale(1.03);
+background:#333;
+transform:scale(1.04);
 
 }
 
 
-.footer{
 
-text-align:center;
-color:#777;
-margin-top:30px;
+.logout{
+
+background:#300;
 
 }
 
@@ -125,35 +113,27 @@ margin-top:30px;
 </head>
 
 
-
 <body>
-
 
 
 <div class="header">
 
 <div class="logo">
-
 👻 GHOST ACADEMY
-
 </div>
 
-
-<div class="subtitle">
-
+<div class="text">
 Gaming Studio • Call of Duty Academy
+</div>
 
 </div>
 
 
-</div>
+
+<div class="profile">
 
 
-
-<div class="stats">
-
-
-<div class="stat">
+<div class="box">
 
 ⭐ XP
 
@@ -164,8 +144,7 @@ Gaming Studio • Call of Duty Academy
 </div>
 
 
-
-<div class="stat">
+<div class="box">
 
 💰 Coins
 
@@ -177,13 +156,15 @@ Gaming Studio • Call of Duty Academy
 
 
 
-<div class="stat">
+<div class="box">
 
 🏆 Rank
 
 <br>
 
-<span id="rank">Recruit</span>
+<span id="rank">
+Recruit
+</span>
 
 </div>
 
@@ -198,62 +179,44 @@ Gaming Studio • Call of Duty Academy
 
 
 <a href="tutorials.html">
-
-📚 Tutorials
-
+📚 Tutorials | آموزش‌ها
 </a>
 
 
 <a href="missions.html">
-
-🎯 Daily Missions
-
+🎯 Daily Missions | ماموریت روزانه
 </a>
 
 
 <a href="shop.html">
-
-🛒 Shop
-
+🛒 Ghost Shop | فروشگاه
 </a>
 
 
 <a href="leaderboard.html">
-
-🏆 Leaderboard
-
+🏆 Leaderboard | رتبه‌بندی
 </a>
 
 
 <a href="profile.html">
-
-👤 Profile
-
+👤 My Profile | پروفایل
 </a>
 
 
 <a href="news.html">
-
-📰 News
-
+📰 News | اخبار
 </a>
 
 
 <a href="settings.html">
-
-⚙️ Settings
-
+⚙️ Settings | تنظیمات
 </a>
 
 
+<a class="logout" href="login.html">
+🚪 Logout | خروج
+</a>
 
-</div>
-
-
-
-<div class="footer">
-
-👻 GHOST ACADEMY © 2026
 
 </div>
 
@@ -262,5 +225,40 @@ Gaming Studio • Call of Duty Academy
 <script>
 
 
-let xp =
-localStorage.getItem("
+let xp = Number(localStorage.getItem("xp")) || 0;
+
+let coins = Number(localStorage.getItem("coins")) || 0;
+
+
+
+document.getElementById("xp").innerHTML=xp;
+
+document.getElementById("coins").innerHTML=coins;
+
+
+
+let rank="Recruit";
+
+
+if(xp>=200)
+rank="Elite";
+
+
+if(xp>=500)
+rank="Master";
+
+
+if(xp>=1000)
+rank="Legend 👑";
+
+
+document.getElementById("rank").innerHTML=rank;
+
+
+
+</script>
+
+
+</body>
+
+</html>
