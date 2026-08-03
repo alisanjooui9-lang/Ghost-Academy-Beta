@@ -1,158 +1,259 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Black Storm Academy Menu</title>
+<title>GHOST ACADEMY</title>
+
 
 <style>
 
 body{
-background:#101010;
-font-family:tahoma;
+
+background:#050505;
 color:white;
+font-family:tahoma;
 margin:0;
 padding:20px;
+
 }
+
 
 .header{
-background:#1c1c1c;
-padding:20px;
-border-radius:15px;
+
+background:linear-gradient(145deg,#111,#222);
+padding:25px;
+border-radius:20px;
 text-align:center;
-border:1px solid #333;
+border:1px solid #444;
+box-shadow:0 0 25px black;
+
 }
+
 
 .logo{
-font-size:28px;
+
+font-size:35px;
 font-weight:bold;
-}
-
-.card{
-background:#181818;
-margin-top:15px;
-padding:15px;
-border-radius:15px;
-}
-
-.btn{
-
-display:block;
-background:#222;
-color:white;
-text-decoration:none;
-padding:15px;
-margin:10px 0;
-border-radius:12px;
-font-size:18px;
-border:1px solid #333;
+letter-spacing:3px;
 
 }
 
-.btn:hover{
 
-background:#00c853;
+.subtitle{
+
+color:#aaa;
+font-size:15px;
 
 }
 
-.info{
+
+
+.stats{
 
 display:flex;
 justify-content:space-around;
-background:#222;
+background:#111;
+margin-top:20px;
 padding:15px;
-border-radius:12px;
-margin-top:15px;
+border-radius:18px;
+border:1px solid #333;
 
 }
+
+
+.stat{
+
+text-align:center;
+
+}
+
+
+
+.menu{
+
+margin-top:25px;
+
+}
+
+
+
+.menu a{
+
+display:block;
+background:#151515;
+color:white;
+text-decoration:none;
+
+padding:18px;
+margin:12px 0;
+
+border-radius:16px;
+
+font-size:18px;
+
+border:1px solid #333;
+
+transition:.3s;
+
+}
+
+
+
+.menu a:hover{
+
+background:#292929;
+transform:scale(1.03);
+
+}
+
+
+.footer{
+
+text-align:center;
+color:#777;
+margin-top:30px;
+
+}
+
 
 </style>
 
 </head>
 
 
+
 <body>
+
 
 
 <div class="header">
 
 <div class="logo">
-🔥 Black Storm Academy 🔥
-</div>
 
-<p>
-آموزش حرفه‌ای کالاف دیوتی موبایل
-</p>
+👻 GHOST ACADEMY
 
 </div>
 
 
-<div class="info">
+<div class="subtitle">
 
-<div>
+Gaming Studio • Call of Duty Academy
+
+</div>
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
 ⭐ XP
+
 <br>
+
 <span id="xp">0</span>
+
 </div>
 
 
-<div>
-💰 سکه
+
+<div class="stat">
+
+💰 Coins
+
 <br>
+
 <span id="coins">0</span>
+
 </div>
 
 
-<div>
-🏆 رنک
+
+<div class="stat">
+
+🏆 Rank
+
 <br>
+
 <span id="rank">Recruit</span>
-</div>
-
 
 </div>
 
 
 
-<div class="card">
+</div>
 
 
-<a class="btn" href="tutorials.html">
-📚 آموزش ها
+
+
+<div class="menu">
+
+
+<a href="tutorials.html">
+
+📚 Tutorials
+
 </a>
 
 
-<a class="btn" href="missions.html">
-🎯 ماموریت های روزانه
+<a href="missions.html">
+
+🎯 Daily Missions
+
 </a>
 
 
-<a class="btn" href="shop.html">
-🛒 فروشگاه
+<a href="shop.html">
+
+🛒 Shop
+
 </a>
 
 
-<a class="btn" href="leaderboard.html">
-🏆 جدول رتبه بندی
+<a href="leaderboard.html">
+
+🏆 Leaderboard
+
 </a>
 
 
-<a class="btn" href="profile.html">
-👤 پروفایل
+<a href="profile.html">
+
+👤 Profile
+
 </a>
 
 
-<a class="btn" href="news.html">
-📰 اخبار
+<a href="news.html">
+
+📰 News
+
 </a>
 
 
-<a class="btn" href="settings.html">
-⚙️ تنظیمات
+<a href="settings.html">
+
+⚙️ Settings
+
 </a>
 
+
+
+</div>
+
+
+
+<div class="footer">
+
+👻 GHOST ACADEMY © 2026
 
 </div>
 
@@ -161,39 +262,5 @@ margin-top:15px;
 <script>
 
 
-let xp = localStorage.getItem("xp") || 0;
-
-let coins = localStorage.getItem("coins") || 0;
-
-
-document.getElementById("xp").innerHTML = xp;
-
-document.getElementById("coins").innerHTML = coins;
-
-
-
-if(xp >= 1000){
-
-document.getElementById("rank").innerHTML="👑 Legend";
-
-}
-
-else if(xp >= 500){
-
-document.getElementById("rank").innerHTML="🔥 Master";
-
-}
-
-else if(xp >= 200){
-
-document.getElementById("rank").innerHTML="⚡ Elite";
-
-}
-
-
-
-</script>
-
-
-</body>
-</html>
+let xp =
+localStorage.getItem("
