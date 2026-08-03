@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GHOST ACADEMY Login</title>
+
+<style>
+
+body{
+background:#050505;
+color:white;
+font-family:tahoma;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+
+.login-box{
+
+background:#111;
+width:85%;
+padding:25px;
+border-radius:20px;
+border:1px solid #333;
+box-shadow:0 0 30px black;
+text-align:center;
+
+}
+
+
+.logo{
+
+font-size:32px;
+font-weight:bold;
+margin-bottom:20px;
+
+}
+
+
+
+input{
+
+width:90%;
+padding:15px;
+margin:10px;
+border-radius:12px;
+border:none;
+background:#222;
+color:white;
+font-size:16px;
+
+}
+
+
+
+button{
+
+width:95%;
+padding:15px;
+margin-top:15px;
+background:#222;
+color:white;
+border:1px solid #444;
+border-radius:12px;
+font-size:18px;
+
+}
+
+
+button:hover{
+
+background:#333;
+
+}
+
+
+
+p{
+
+color:#aaa;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="login-box">
+
+
+<div class="logo">
+
+👻 GHOST ACADEMY
+
+</div>
+
+
+<p>
+ورود به استودیو
+</p>
+
+
+
+<input id="username" placeholder="نام کاربری">
+
+
+<input id="password" type="password" placeholder="رمز عبور">
+
+
+<button onclick="login()">
+
+🚀 ورود
+
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+function login(){
+
+
+let user =
+document.getElementById("username").value;
+
+
+let pass =
+document.getElementById("password").value;
+
+
+
+if(user=="" || pass==""){
+
+alert("❌ لطفا اطلاعات را کامل کنید");
+
+return;
+
+}
+
+
+
+localStorage.setItem("username",user);
+
+
+alert("👻 خوش آمدی "+user);
+
+
+
+window.location="menu.html";
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
